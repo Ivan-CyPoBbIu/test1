@@ -23,6 +23,21 @@ line-height: $lh;
   }
 }
 
+@mixin svgLink ($focus1, $hover1, $active1) {
+
+  &:focus {
+    fill: $focus1;
+  }
+
+  &:hover {
+    fill: $hover1;
+  }
+
+  &:active {
+    fill: $active1;
+  }
+}
+
 @mixin bgLink ($bgfocus1, $bghover1, $bgactive1) {
 
   &:focus {

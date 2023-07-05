@@ -57,9 +57,54 @@ function init() {
 ymaps.ready(init);
 
 let closeMap = document.querySelector('.contacts__map-btn');
-let mapDescr = document.querySelector('.contacts__descr')
+let mapDescr = document.querySelector('.contacts__descr');
+let openDescr = document.querySelector('.contacts__open');
 
 closeMap.addEventListener('click', function () {
   mapDescr.classList.add('contacts__descr-close')
   closeMap.classList.add('contacts__descr-close')
+  openDescr.classList.add('contacts__open-show')
 })
+
+openDescr.addEventListener('click', function () {
+  openDescr.classList.remove('contacts__open-show')
+  mapDescr.classList.remove('contacts__descr-close')
+  closeMap.classList.remove('contacts__descr-close')
+})
+
+let validation = new JustValidate('.contacts__form');
+
+validation.addField(".contacts__form-input", [
+  {
+    rule: 'required',
+    errorMessage: 'Введите Имя'
+  },
+  {
+    rule: 'minLength',
+    value: 2,
+    errorMessage: 'Минимум 2 символа'
+  }
+])
+.addField(".contacts__email", [
+  {
+    rule: 'required',
+    errorMessage: 'Введите почту'
+  },
+  {
+    rule: 'email',
+    errorMessage: 'неверный email'
+  }
+])
+
+let aboutValidation = new JustValidate('.about__form');
+
+aboutValidation.addField(".about__form-input", [
+  {
+    rule: 'required',
+    errorMessage: 'Введите почту'
+  },
+  {
+    rule: 'email',
+    errorMessage: 'неверный email'
+  }
+])

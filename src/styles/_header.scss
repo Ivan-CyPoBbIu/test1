@@ -51,6 +51,11 @@
   &__btn-svg {
     width: 100%;
     height: 100%;
+      fill: white;
+      transition: fill .3s ease-in-out;
+    &:hover {
+      fill: var(--hover-color);
+    }
   }
 
   &__form {

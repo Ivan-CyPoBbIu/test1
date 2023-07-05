@@ -35,5 +35,7 @@
   &__social-svg {
     width: 30px;
     height: 30px;
+    fill: var(--gray-color);
+    @include svgLink(var(--focus-color), var(--hover-color), var(--active-color))
   }
 }
